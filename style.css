@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --black: #25222c;
+  --gray1: #333;
+  --gray2: #4f4f4f;
+  --roboto: "Roboto", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: var(--roboto);
+  background-color: #f9f9f9;
+}
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.yt-video {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  transition: 200ms ease-out 0.5s;
+}
+
+.yt-video:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.194);
+}
+
+.yt-video:hover .buttons {
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.video-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+
+.video-info h1 {
+  font-size: calc(19 / 16 * 1rem);
+  color: var(--black);
+  font-weight: 500;
+  line-height: 30px;
+  width: 260px;
+}
+
+.video-info span {
+  color: var(--gray2);
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.video-info p {
+  color: var(--gray2);
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.buttons {
+  visibility: hidden;
+  flex-direction: column;
+  width: 320px;
+  align-self: center;
+  margin-top: 35px;
+}
+
+.buttons button {
+  border: none;
+  height: 40px;
+  text-transform: uppercase;
+  width: 320px;
+  margin-bottom: 10px;
+}
+
+.buttons button svg {
+  font-size: 15spx;
+}
+
+.player {
+  max-width: 750px;
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.player__button {
+  display: none;
+}
+
+.player__controls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%) translateY(-5px);
+  transition: all 0.3s;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.player:hover .player__controls {
+  transform: translateY(0);
+}
+
+.player:hover .progress {
+  height: 7px;
+}
+
+.player__controls > * {
+  flex: 1;
+}
+
+.progress {
+  flex: 10;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  height: 5px;
+  transition: height 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.progress__filled {
+  width: 0%;
+  background: #ff0000;
+  flex: 0;
+  flex-basis: 0%;
+}
